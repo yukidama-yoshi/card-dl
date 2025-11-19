@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カードのダウンロード</title>
+</head>
+<body>
+    <h1>カードのダウンロード</h1>
+
+    <h2>アンケート参加特典のカードをダウンロードすることができます。予告なく削除や変更をすることがあります。</h2>
+
+    <label>ID</label>
+    <input id="f"><br>
+
+    <label>コード</label>
+    <input id="n"><br>
+
+    <p id="p">URLがここに表示されます</p>
+
+    <p>
+        <a href="javascript:void(0)" onclick="m()">移動する</a>
+    </p>
+
+    <p>
+        <a href="https://yukidama-yoshi.github.io/index.html">ホームページへ</a>
+    </p>
+
+    <script>
+        const f = document.getElementById("f");
+        const n = document.getElementById("n");
+        const p = document.getElementById("p");
+
+        function u() {
+            const a = f.value.trim();
+            const b = n.value.trim();
+            if (a && b) {
+                const url = `https://yukidama-yoshi.github.io/card-dl/${a}/${b}`;
+                p.textContent = url;
+            } else {
+                p.textContent = "URLがここに表示されます";
+            }
+        }
+
+        function m() {
+            const a = f.value.trim();
+            const b = n.value.trim();
+            if (a && b) {
+                const url = `https://yukidama-yoshi.github.io/card-dl/${a}/${b}`;
+                window.open(url);
+            } else {
+                alert("IDとコードは両方入力して下さい。");
+            }
+        }
+
+        f.addEventListener("input", u);
+        n.addEventListener("input", u);
+    </script>
+</body>
+</html>
