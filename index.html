@@ -1,61 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>カードのダウンロード</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特典カードのダウンロード | ゆきだま</title>
+    <style>
+        /* ベーススタイル */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* メインコンテナ */
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #7f8c8d;
+            font-size: 1em;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        /* 警告メッセージ */
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fceae9;
+            border-radius: 6px;
+        }
+
+        /* フォームのグループ化 */
+        .form-group {
+            margin-bottom: 25px; /* スペースを少し広げた */
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; /* paddingを含めてwidth 100%にするため */
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* ボタンのスタイル */
+        .btn {
+            display: inline-block; /* 'block' から変更 */
+            /* width: 100%; */ /* この行を削除またはコメントアウト */
+            padding: 12px 20px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        /* ホームページへ */
+        .footer-link {
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        .footer-link a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>カードのダウンロード</h1>
+    <div class="container">
+        <h1>カードのダウンロード</h1>
+        <h2>アンケート参加特典のカードをダウンロードできます。</h2>
+        
+        <p class="warning">
+            ⚠ 予告なく削除や変更をすることがあります。
+        </p>
+        
+        <div class="form-group">
+            <label for="f">ID</label>
+            <input type="text" id="f" placeholder="IDを入力">
+        </div>
 
-    <h2>アンケート参加特典のカードをダウンロードすることができます。</h2>
-    <p>⚠予告なく削除や変更をすることがあります。</p>
-    
-    <label>ID</label>
-    <input id="f"><br>
+        <div class="form-group">
+            <label for="n">コード</label>
+            <input type="text" id="n" placeholder="コードを入力">
+        </div>
 
-    <label>コード</label>
-    <input id="n"><br>
+        <div>
+            <a href="javascript:void(0)" onclick="m()" class="btn btn-primary">
+                カードをダウンロード
+            </a>
+        </div>
 
-    <p> id="p">URLがここに表示されます</p>
-
-    <p>
-        <a href="javascript:void(0)" onclick="m()">移動する</a>
-    </p>
-
-    <p>
-        <a href="https://yukidama-yoshi.github.io/index.html">ホームページへ</a>
-    </p>
+        <p class="footer-link">
+            <a href="https://yukidama-yoshi.github.io/index.html">ホームページへ戻る</a>
+        </p>
+    </div>
 
     <script>
         const f = document.getElementById("f");
         const n = document.getElementById("n");
-        const p = document.getElementById("p");
+        // p (URL表示要素) の定義を削除しました
 
-        function u() {
-            const a = f.value.trim();
-            const b = n.value.trim();
-            if (a && b) {
-                const url = `https://yukidama-yoshi.github.io/card-dl/${a}/${b}`;
-                p.textContent = url;
-            } else {
-                p.textContent = "URLがここに表示されます";
-            }
-        }
+        // URLを生成して表示する関数 u() を削除しました
 
+        // リンク先に移動する関数 m() のみ残します
         function m() {
             const a = f.value.trim();
             const b = n.value.trim();
             if (a && b) {
                 const url = `https://yukidama-yoshi.github.io/card-dl/${a}/${b}`;
-                window.open(url);
+                // 新しいタブで開く
+                window.open(url, '_blank'); 
             } else {
                 alert("IDとコードは両方入力して下さい。");
             }
         }
 
-        f.addEventListener("input", u);
-        n.addEventListener("input", u);
+        // inputイベントリスナーを削除しました
     </script>
 </body>
 </html>
